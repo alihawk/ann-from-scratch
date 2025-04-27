@@ -1,0 +1,15 @@
+# Ignore IDE/project settings
+.idea/
+
+# Ignore Python cache
+__pycache__/
+
+# Ignore big data files
+*.hdf5
+*.npy
+
+# Ignore Matplotlib figures if auto-generated
+*.svg
+
+# Ignore zip files
+*.zip
