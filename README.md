@@ -1,45 +1,40 @@
-# Artificial Neural Networks from Scratch - Classification and Regression
+# Neural Networks from Scratch
 
-This project implements a fully-connected Artificial Neural Network (ANN) from scratch using NumPy, supporting classification, regression, gradient checking, and real-world competition predictions.
+A fully connected neural network written in NumPy, without any deep learning framework. It handles both classification and regression, trains with backpropagation and L2 regularization, and uses numerical gradient checking to make sure the gradients are right.
 
----
+I also applied it to a real problem: classifying tissue types from FTIR spectroscopy images.
 
-## 📁 Project Structure
+![Tissue classes in the FTIR dataset](viz-classes.png)
 
-- `nn.py` — Main ANN model code.
-- `competition.ipynb` — Training and submitting for FTIR tissue classification.
-- `test_nn.py` — Unit tests for verifying ANN.
-- `datasets/` — Contains small datasets: `doughnut.tab`, `squares.tab`.
-- `submission.npy` — Example FTIR competition submission.
-- `doughnut_loss.svg` — Training loss curve for visualization.
+## What's in the repo
 
----
+- `nn.py`: the network, the training loop and a small command-line interface
+- `test_nn.py`: unit tests, including the gradient checks
+- `competition.ipynb`: training and predictions for the FTIR tissue classification task
+- `datasets/`: two small toy datasets (`doughnut.tab`, `squares.tab`) for quick experiments
 
-## 🛠 Installation
-
-Clone the repository:
+## Running it
 
 ```bash
 git clone https://github.com/alihawk/ann-from-scratch.git
 cd ann-from-scratch
-
-
-Install the required Python packages:
-
 pip install -r requirements.txt
+```
 
+Train a network with two hidden layers:
 
-How to Run
-1. Train Neural Networks
-
+```bash
 python nn.py --units 8,4 --activations relu,tanh --lambda 0.01 --epochs 3000
+```
 
+Run the tests:
 
-2. Run Unit Tests
-
+```bash
 python test_nn.py
+```
 
+The FTIR experiment is in `competition.ipynb`.
 
-3. Competition Task
+## License
 
-jupyter notebook competition.ipynb
+MIT
